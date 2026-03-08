@@ -23,14 +23,14 @@ omarchy-theme-install https://github.com/oldjobobo/omarchy-windows-dark-mode-the
 
 <table>
   <tr>
-    <td><img src="backgrounds/1378852.png" width="220" alt="1378852"></td>
-    <td><img src="backgrounds/wallhaven-7j9kdo.png" width="220" alt="wallhaven-7j9kdo"></td>
-    <td><img src="backgrounds/wallhaven-eo37j8.jpg" width="220" alt="wallhaven-eo37j8"></td>
+    <td><img src="backgrounds/01-midnight-ninja-cat.jpg" width="220" alt="01-midnight-ninja-cat"></td>
+    <td><img src="backgrounds/02-blueprint-window.png" width="220" alt="02-blueprint-window"></td>
+    <td><img src="backgrounds/03-minimal-core.png" width="220" alt="03-minimal-core"></td>
   </tr>
   <tr>
-    <td><img src="backgrounds/wallhaven-o5vzj9.png" width="220" alt="wallhaven-o5vzj9"></td>
-    <td><img src="backgrounds/wallhaven-oggmym.png" width="220" alt="wallhaven-oggmym"></td>
-    <td></td>
+    <td><img src="backgrounds/04-omarchy-frame.png" width="220" alt="04-omarchy-frame"></td>
+    <td><img src="backgrounds/05-windowstorm.png" width="220" alt="05-windowstorm"></td>
+    <td><img src="backgrounds/06-green-pulse-window.png" width="220" alt="06-green-pulse-window"></td>
   </tr>
 </table>
 
