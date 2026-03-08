@@ -14,11 +14,6 @@ Use the Omarchy theme installer:
 omarchy-theme-install https://github.com/oldjobobo/omarchy-windows-dark-mode-theme
 ```
 
-## Widgets
-
-**Optional overlays**
-- None included in this theme.
-
 ## Wallpapers
 
 <table>
