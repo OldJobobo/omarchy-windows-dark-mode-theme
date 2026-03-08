@@ -1,0 +1,579 @@
+/* db   d8b   db d888888b d8b   db d8888b.  .d88b.  db   d8b   db .d8888.    */
+/* 88   I8I   88   `88'   888o  88 88  `8D .8P  Y8. 88   I8I   88 88'  YP    */
+/* 88   I8I   88    88    88V8o 88 88   88 88    88 88   I8I   88 `8bo.      */
+/* Y8   I8I   88    88    88 V8o88 88   88 88    88 Y8   I8I   88   `Y8b.    */
+/* `8b d8'8b d8'   .88.   88  V888 88  .8D `8b  d8' `8b d8'8b d8' db   8D    */
+/*  `8b8' `8d8'  Y888888P VP   V8P Y8888D'  `Y88P'   `8b8' `8d8'  `8888Y'    */
+/*                                                                           */
+/*                                                                           */
+/* d8888b.  .d8b.  d8888b. db   dD      .88b  d88.  .d88b.  d8888b. d88888b  */
+/* 88  `8D d8' `8b 88  `8D 88 ,8P'      88'YbdP`88 .8P  Y8. 88  `8D 88'      */
+/* 88   88 88ooo88 88oobY' 88,8P        88  88  88 88    88 88   88 88ooooo  */
+/* 88   88 88~~~88 88`8b   88`8b        88  88  88 88    88 88   88 88~~~~~  */
+/* 88  .8D 88   88 88 `88. 88 `88.      88  88  88 `8b  d8' 88  .8D 88.      */
+/* Y8888D' YP   YP 88   YD YP   YD      YP  YP  YP  `Y88P'  Y8888D' Y88888P  */
+/*                                                                           */
+/*                                                                           */
+
+/**
+* @name Omarchy Windows Dark Mode Vencord
+* @author @oldjobobo
+* @version 0.3.0
+* @description VS Code dark modern shell with sharp geometry using Omarchy Vencord Base
+**/
+
+@import url("../vencord.theme.base.css");
+
+:root {
+  /* Tonal ramp / UI neutrals (Dark Modern UI) */
+  --color00: #181818;
+  --color01: #1f1f1f;
+  --color02: #2b2b2b;
+  --color03: #616161;
+  --color04: #868686;
+  --color05: #cccccc;
+  --color06: #f8f8f8;
+  --color07: #ffffff;
+
+  /* Accents (Dark Modern UI) */
+  --color08: #f85149;
+  --color09: #e2c08d;
+  --color10: #9e6a03;
+  --color11: #2ea043;
+  --color12: #4daafc;
+  --color13: #0078d4;
+  --color14: #6caddf;
+  --color15: #010409;
+
+  /* Base24 extensions */
+  --color16: #202020;
+  --color17: #222222;
+  --color18: #026ec1;
+  --color19: #2488db;
+  --color20: #85b6ff;
+  --color21: #d7d7d7;
+  --color22: #9d9d9d;
+  --color23: #6e7681;
+
+  /* VS Code-like UI layering */
+  --item-surface-0: var(--color00);
+  --item-surface-1: var(--color01);
+  --item-surface-2: var(--color16);
+  --item-surface-3: var(--color17);
+  --item-surface-4: var(--color02);
+
+  --item-text: var(--color05);
+  --item-text-muted: var(--color23);
+  --item-text-contrast: var(--color21);
+  --item-text-inverse: var(--color00);
+
+  --item-accent: var(--color13);
+  --item-accent-strong: var(--color18);
+  --item-danger: var(--color08);
+  --item-highlight: var(--color20);
+  --item-unread: var(--color13);
+
+  --item-mention-glow-1: var(--color13);
+  --item-mention-glow-2: var(--color12);
+  --item-mention-glow-3: var(--color11);
+
+  --item-message-text: var(--item-text);
+  --item-channel-name: var(--color22);
+  --item-channel-name-unread: var(--color20);
+  --item-channel-name-selected: var(--color06);
+  --item-username: var(--color14);
+  --item-mention-foreground: var(--color21);
+  --item-mention-text: var(--color20);
+
+  --item-border: color-mix(in srgb, var(--color02) 78%, transparent);
+  --item-accent-dim: color-mix(in srgb, var(--color12) 58%, var(--color01));
+  --vscode-activity-bg: #181818;
+  --vscode-sidebar-bg: #1f1f1f;
+  --vscode-editor-bg: #1e1e1e;
+  --vscode-tab-inactive: #2b2b2b;
+  --vscode-tab-active: #1e1e1e;
+  --vscode-tab-border: #252526;
+  --vscode-focus: #0078d4;
+
+  --font-primary: "Segoe UI Variable", "Segoe UI", system-ui, "gg sans", sans-serif;
+  --font-display: "Segoe UI Variable", "Segoe UI", system-ui, "gg sans", sans-serif;
+
+  /* flatten any Discord radius token usage */
+  --radius-xs: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-xxl: 0px;
+}
+
+/* increase line-by-line color variation across Discord UI states */
+.theme-dark,
+.theme-darker,
+.theme-midnight,
+.visual-refresh {
+  --background-primary: var(--color01) !important;
+  --background-secondary: var(--color16) !important;
+  --background-secondary-alt: var(--color17) !important;
+  --background-tertiary: var(--color16) !important;
+  --background-accent: var(--color17) !important;
+  --background-floating: var(--color16) !important;
+
+  --background-base-lowest: var(--color00) !important;
+  --background-base-lower: var(--color01) !important;
+  --background-base-low: var(--color16) !important;
+  --background-base-tertiary: var(--color17) !important;
+
+  --background-surface-high: var(--color16) !important;
+  --background-surface-higher: var(--color17) !important;
+  --background-surface-highest: var(--color02) !important;
+  --bg-surface-raised: var(--color17) !important;
+  --bg-surface-overlay: var(--color16) !important;
+  --bg-base-secondary: var(--color17) !important;
+  --bg-base-tertiary: var(--color16) !important;
+
+  --background-modifier-accent: color-mix(in srgb, var(--color02) 68%, transparent) !important;
+  --background-modifier-hover: color-mix(in srgb, var(--color17) 75%, var(--color02)) !important;
+  --background-modifier-active: color-mix(in srgb, var(--color13) 36%, var(--color00)) !important;
+  --background-modifier-selected: color-mix(in srgb, var(--color13) 52%, var(--color00)) !important;
+
+  --background-mentioned: color-mix(in srgb, var(--color13) 20%, var(--color01)) !important;
+  --background-mentioned-hover: color-mix(in srgb, var(--color13) 28%, var(--color01)) !important;
+  --mention-background: color-mix(in srgb, var(--color13) 24%, var(--color01)) !important;
+
+  --text-normal: var(--color05) !important;
+  --text-muted: var(--color23) !important;
+  --text-primary: var(--color05) !important;
+  --text-secondary: var(--color22) !important;
+  --header-primary: var(--color14) !important;
+  --header-secondary: var(--color12) !important;
+  --interactive-normal: var(--color22) !important;
+  --interactive-hover: var(--color21) !important;
+  --interactive-active: var(--color21) !important;
+  --interactive-muted: var(--color04) !important;
+
+  --channels-default: var(--color22) !important;
+  --channels-default-unread: var(--color20) !important;
+  --channels-default-muted: var(--color03) !important;
+
+  --text-link: var(--color11) !important;
+  --mention-foreground: var(--color09) !important;
+  --mention-background: color-mix(in srgb, var(--color09) 24%, var(--color01)) !important;
+  --brand-500: var(--color13) !important;
+  --brand-560: var(--color18) !important;
+  --status-positive: var(--color11) !important;
+  --status-warning: var(--color09) !important;
+  --status-danger: var(--color08) !important;
+
+  --button-secondary-background: var(--color02) !important;
+  --button-secondary-background-hover: color-mix(in srgb, var(--color02) 72%, var(--color04)) !important;
+  --button-filled-brand-background: var(--color18) !important;
+  --button-filled-brand-background-hover: var(--color19) !important;
+
+  /* border tokens */
+  --border-subtle: var(--color02) !important;
+  --border-faint: var(--color17) !important;
+  --border-strong: var(--color13) !important;
+  --channeltextarea-background: var(--color16) !important;
+  --input-background: var(--color16) !important;
+  --modal-background: var(--color16) !important;
+  --scrollbar-thin-thumb: color-mix(in srgb, var(--color04) 45%, transparent) !important;
+  --scrollbar-thin-track: transparent !important;
+}
+
+/* no-rounded-corners pass */
+:where(
+  [class*="app"],
+  [class*="base"],
+  [class*="sidebar"],
+  [class*="content"],
+  [class*="chat"],
+  [class*="panels"],
+  [class*="container"],
+  [class*="wrapper"],
+  [class*="scroller"],
+  [class*="menu"],
+  [class*="modal"],
+  [class*="layer"],
+  [class*="button"],
+  [class*="input"],
+  [class*="card"],
+  [class*="tab"],
+  [class*="pill"],
+  [class*="listItem"],
+  [class*="item"],
+  [class*="header"],
+  [class*="footer"],
+  a[data-list-item-id^="channels___"]
+) {
+  border-radius: 0 !important;
+}
+
+/* hard stop on any residual rounding from Discord/base theme */
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+}
+
+/* maintain sharp selected-channel treatment */
+a[data-list-item-id^="channels___"][aria-selected="true"],
+a[data-list-item-id^="channels___"]:hover {
+  box-shadow: inset 2px 0 0 0 var(--item-accent) !important;
+}
+
+/* reinforce visual rhythm in lists and panes */
+a[data-list-item-id^="channels___"][aria-selected="true"] {
+  background: color-mix(in srgb, var(--color13) 52%, var(--color00)) !important;
+}
+
+a[data-list-item-id^="channels___"]:hover {
+  background: color-mix(in srgb, var(--color17) 75%, var(--color02)) !important;
+}
+
+/* channel names: explicit state mapping with high specificity */
+a[data-list-item-id^="channels___"]:not([class*="modeUnread"]):not([aria-selected="true"]) [class*="name"] *,
+li[class*="containerDefault"]:not([class*="modeUnread"]):not([class*="selected"]):not([class*="modeSelected"]) [class*="name"] *,
+#channels [class*="name__"] {
+  color: var(--color22) !important;
+}
+
+a[data-list-item-id^="channels___"]:hover [class*="name"] *,
+li[class*="containerDefault"]:hover [class*="name"] * {
+  color: var(--color20) !important;
+}
+
+a[data-list-item-id^="channels___"][class*="modeUnread"] [class*="name"] *,
+li[class*="containerDefault"][class*="modeUnread"] [class*="name"] *,
+#channels [class*="modeUnread"] [class*="name__"] {
+  color: var(--color12) !important;
+}
+
+a[data-list-item-id^="channels___"][aria-selected="true"] [class*="name"] *,
+a[data-list-item-id^="channels___"][class*="modeSelected"] [class*="name"] *,
+li[class*="containerDefault"][class*="selected"] [class*="name"] *,
+li[class*="containerDefault"][class*="modeSelected"] [class*="name"] *,
+#channels [class*="modeSelected"] [class*="name__"] {
+  color: var(--color06) !important;
+}
+
+a[data-list-item-id^="channels___"][class*="modeMuted"] [class*="name"] *,
+li[class*="containerDefault"][class*="modeMuted"] [class*="name"] *,
+#channels [class*="modeMuted"] [class*="name__"] {
+  color: var(--color03) !important;
+}
+
+/* channel icons: preserve state variation */
+a[data-list-item-id^="channels___"] svg,
+a[data-list-item-id^="channels___"] svg path,
+a[data-list-item-id^="channels___"] [class*="icon"],
+a[data-list-item-id^="channels___"] [class*="icon"] path {
+  color: var(--color23) !important;
+  fill: var(--color23) !important;
+}
+
+a[data-list-item-id^="channels___"]:hover svg,
+a[data-list-item-id^="channels___"]:hover svg path,
+a[data-list-item-id^="channels___"]:hover [class*="icon"],
+a[data-list-item-id^="channels___"]:hover [class*="icon"] path {
+  color: var(--color14) !important;
+  fill: var(--color14) !important;
+}
+
+a[data-list-item-id^="channels___"][aria-selected="true"] svg,
+a[data-list-item-id^="channels___"][aria-selected="true"] svg path,
+a[data-list-item-id^="channels___"][class*="modeSelected"] svg,
+a[data-list-item-id^="channels___"][class*="modeSelected"] svg path,
+a[data-list-item-id^="channels___"][aria-selected="true"] [class*="icon"],
+a[data-list-item-id^="channels___"][aria-selected="true"] [class*="icon"] path {
+  color: var(--color20) !important;
+  fill: var(--color20) !important;
+}
+
+a[data-list-item-id^="channels___"][class*="modeUnread"] svg,
+a[data-list-item-id^="channels___"][class*="modeUnread"] svg path,
+a[data-list-item-id^="channels___"][class*="modeUnread"] [class*="icon"],
+a[data-list-item-id^="channels___"][class*="modeUnread"] [class*="icon"] path {
+  color: var(--color12) !important;
+  fill: var(--color12) !important;
+}
+
+a[data-list-item-id^="channels___"][class*="modeMuted"] svg,
+a[data-list-item-id^="channels___"][class*="modeMuted"] svg path,
+a[data-list-item-id^="channels___"][class*="modeMuted"] [class*="icon"],
+a[data-list-item-id^="channels___"][class*="modeMuted"] [class*="icon"] path {
+  color: var(--color03) !important;
+  fill: var(--color03) !important;
+}
+
+/* force usernames to VSCode Base0C */
+[class*="username"] {
+  color: var(--color12) !important;
+}
+
+/* less-common accents in warm Base09 */
+[class*="reactionCount"],
+[class*="typingDots"] [class*="dot"],
+[class*="botTag"],
+[class*="newBadge"] {
+  color: #e2c08d !important;
+}
+
+/* VS Code-like blue accent borders */
+[class*="sidebar"],
+[class*="panels"],
+[class*="chat"],
+[class*="content"],
+[class*="container"],
+[class*="membersWrap"],
+[class*="nowPlayingColumn"],
+[class*="peopleColumn"],
+[class*="searchResultsWrap"],
+[class*="layerContainer"] [class*="menu"],
+[class*="layerContainer"] [class*="modal"],
+[class*="popout"],
+[class*="container"][class*="themed"] {
+  border-color: var(--color13) !important;
+}
+
+[class*="sidebar"] {
+  border-right: 0 !important;
+}
+
+[class*="panels"] {
+  border-top: 1px solid var(--color13) !important;
+}
+
+[class*="chat"] {
+  border-left: 1px solid color-mix(in srgb, var(--color13) 70%, transparent) !important;
+}
+
+/* flatten inherited rounded blocks from base theme */
+div[class*="mentioned"],
+li[class*="mentioned"],
+div[class*="replying"],
+li[class*="replying"],
+[id^="chat-messages-"] [class*="messageListItem"]:hover,
+[id^="chat-messages-"] [class*="messageListItem"]:hover > [class*="message"],
+[id^="chat-messages-"] [class*="messageListItem"]:hover [class*="contents"],
+div#---new-messages-bar.divider__5126c.hasContent__5126c,
+div#---new-messages-bar.divider__908e2.isUnread__908e2 .content__908e2,
+div#---new-messages-bar.divider__908e2.isUnread__908e2 .unreadPill__908e2,
+button[class*="jumpToPresentBar"],
+div[class*="jumpToPresentBar"],
+div[class*="unreadMentionsIndicatorBottom"] > div {
+  border-radius: 0 !important;
+}
+
+/* VS Code shell framing */
+[class*="appMount"],
+[class*="bg_"] {
+  background: var(--vscode-editor-bg) !important;
+}
+
+/* Left activity rail (server column) */
+nav[aria-label="Servers sidebar"],
+[class*="guilds"] {
+  background: var(--vscode-activity-bg) !important;
+  border-right: 1px solid var(--vscode-tab-border) !important;
+}
+
+nav[aria-label="Servers sidebar"] [class*="blobContainer"],
+nav[aria-label="Servers sidebar"] [class*="wrapper"] {
+  border-radius: 0 !important;
+}
+
+/* monochrome server rail icons by default */
+nav[aria-label="Servers sidebar"] [class*="icon"],
+nav[aria-label="Servers sidebar"] img,
+nav[aria-label="Servers sidebar"] svg,
+nav[aria-label="Servers sidebar"] svg path {
+  filter: grayscale(1) saturate(0) contrast(1.06) brightness(1.05) !important;
+  color: var(--color21) !important;
+  fill: var(--color21) !important;
+}
+
+/* active server: clear grayscale so it stands out */
+nav[aria-label="Servers sidebar"] [aria-selected="true"] [class*="icon"],
+nav[aria-label="Servers sidebar"] [aria-selected="true"] img,
+nav[aria-label="Servers sidebar"] [aria-selected="true"] svg,
+nav[aria-label="Servers sidebar"] [aria-selected="true"] svg path,
+nav[aria-label="Servers sidebar"] [aria-selected="true"] [class*="acronym"] {
+  filter: grayscale(1) saturate(0) contrast(1.06) brightness(1.05) !important;
+  color: var(--color21) !important;
+  fill: var(--color21) !important;
+}
+
+/* hover/active: blue tile */
+nav[aria-label="Servers sidebar"] a:hover [class*="childWrapper"],
+nav[aria-label="Servers sidebar"] [aria-selected="true"] [class*="childWrapper"] {
+  background: var(--vscode-focus) !important;
+  border: 1px solid color-mix(in srgb, var(--vscode-focus) 80%, white) !important;
+}
+
+
+
+/* Explorer-like channel panel */
+[class*="sidebar"] {
+  background: var(--vscode-sidebar-bg) !important;
+  border-top: 1px solid var(--vscode-tab-border) !important;
+  border-right: 1px solid var(--vscode-tab-border) !important;
+}
+
+[class*="sidebar"] [class*="header"],
+[class*="sidebar"] [class*="searchBar"] {
+  background: color-mix(in srgb, var(--vscode-sidebar-bg) 88%, black) !important;
+  border-bottom: 1px solid var(--vscode-tab-border) !important;
+}
+
+/* Editor tab/header treatment */
+[class*="chat"] [class*="title"],
+[class*="chat"] [class*="toolbar"] {
+  background: var(--vscode-tab-inactive) !important;
+  border-bottom: 1px solid var(--vscode-tab-border) !important;
+}
+
+/* tab model for DM/channel header states */
+[class*="chat"] [class*="tabBar"] [class*="item"],
+[class*="chat"] [class*="topPill"] [class*="item"],
+[class*="chat"] [class*="title"] [role="tab"] {
+  background: var(--vscode-tab-inactive) !important;
+  color: var(--color22) !important;
+  border-top: 2px solid transparent !important;
+}
+
+[class*="chat"] [class*="tabBar"] [class*="item"][aria-selected="true"],
+[class*="chat"] [class*="topPill"] [class*="item"][aria-selected="true"],
+[class*="chat"] [class*="title"] [role="tab"][aria-selected="true"] {
+  background: var(--vscode-tab-active) !important;
+  color: var(--color21) !important;
+  border-top-color: var(--vscode-focus) !important;
+  box-shadow: none !important;
+}
+
+/* Editor area + message rows */
+[class*="chatContent"],
+[class*="messagesWrapper"] {
+  background: var(--vscode-editor-bg) !important;
+}
+
+[id^="chat-messages-"] [class*="messageListItem"] {
+  border-left: 1px solid transparent !important;
+  margin-top: 4px !important;
+  margin-bottom: 4px !important;
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+}
+
+[id^="chat-messages-"] [class*="messageListItem"]:hover {
+  border-left-color: color-mix(in srgb, var(--vscode-focus) 70%, transparent) !important;
+}
+
+/* keep grouped follow-up messages a little tighter */
+[id^="chat-messages-"] [class*="messageListItem"][class*="groupStart"] + [class*="messageListItem"] {
+  margin-top: 2px !important;
+}
+
+/* Composer as VS Code status/editor seam */
+[class*="channelTextArea"],
+[class*="formWithLoadedChatInput"] {
+  background: var(--vscode-editor-bg) !important;
+  border-top: 1px solid var(--vscode-tab-border) !important;
+}
+
+[class*="channelTextArea"] [class*="scrollableContainer"] {
+  background: var(--color16) !important;
+  border: 1px solid var(--vscode-tab-border) !important;
+}
+
+[class*="channelTextArea"]:focus-within [class*="scrollableContainer"] {
+  border-color: var(--vscode-focus) !important;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--vscode-focus) 45%, transparent) !important;
+}
+
+/* Code blocks closer to VS Code */
+code,
+pre,
+[class*="markup"] code,
+[class*="codeBlock"] {
+  font-family: "Cascadia Code", "Fira Code", "JetBrains Mono", monospace !important;
+}
+
+body {
+  font-weight: 400;
+  letter-spacing: 0.1px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* enforce lighter UI/body text weight across Discord surfaces */
+[class*="messageContent"],
+[class*="markup"],
+[class*="username"],
+[class*="name"],
+[class*="channelName"],
+[class*="header"],
+[class*="title"],
+[class*="tabBar"] [class*="item"],
+[class*="topPill"] [class*="item"] {
+  font-weight: 400 !important;
+}
+
+/* prevent late font reflow/bold jumps from Discord/plugin style injection */
+html,
+body,
+#app-mount {
+  font-family: "Segoe UI Variable", "Segoe UI", system-ui, "gg sans", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  font-synthesis: none !important;
+  text-size-adjust: 100% !important;
+}
+
+#app-mount :not(code):not(pre):not(svg):not(path):not([class*="icon"]) {
+  font-family: "Segoe UI Variable", "Segoe UI", system-ui, "gg sans", sans-serif !important;
+  font-weight: 400 !important;
+}
+
+html body #app-mount,
+html body #app-mount *:not(code):not(pre):not(svg):not(path):not([class*="icon"]) {
+  font-family: "Segoe UI Variable", "Segoe UI", system-ui, "gg sans", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  font-variation-settings: "wght" 400 !important;
+}
+
+/* restore comfortable message rhythm without undoing font stability fix */
+[class*="messageContent"],
+[class*="markup"] {
+  color: #b8b8b8 !important;
+  line-height: 1.5 !important;
+}
+
+[class*="markup"] p,
+[class*="markup"] ul,
+[class*="markup"] ol {
+  margin-top: 0.35em !important;
+  margin-bottom: 0.35em !important;
+}
+
+[class*="markup"] pre,
+[class*="codeBlock"] {
+  background: color-mix(in srgb, var(--color15) 65%, var(--vscode-editor-bg)) !important;
+  border: 1px solid var(--vscode-tab-border) !important;
+}
+
+/*  ______   __       ______                                        */
+/* /_____/\ /_/\     /_____/\                                       */
+/* \:::_ \ \\:\ \    \:::_ \ \                                      */
+/*  \:\ \ \ \\:\ \    \:\ \ \ \                                     */
+/*   \:\ \ \ \\:\ \____\:\ \ \ \                                    */
+/*    \:\_\ \ \\:\/___/\\:\/.:| |                                   */
+/*  ___\_____\/_\_____\/ \____/_/  ______    _______   ______       */
+/* /________/\/_____/\ /_______/\ /_____/\ /_______/\ /_____/\      */
+/* \__.::.__\/\:::_ \ \\::: _  \ \\:::_ \ \\::: _  \ \\:::_ \ \     */
+/*   /_\::\ \  \:\ \ \ \\::(_)  \/_\:\ \ \ \\::(_)  \/_\:\ \ \ \    */
+/*   \:.\::\ \  \:\ \ \ \\::  _  \ \\:\ \ \ \\::  _  \ \\:\ \ \ \   */
+/*    \: \  \ \  \:\_\ \ \\::(_)  \ \\:\_\ \ \\::(_)  \ \\:\_\ \ \  */
+/*     \_____\/   \_____\/ \_______\/ \_____\/ \_______\/ \_____\/  */
+/*                                                                  */
