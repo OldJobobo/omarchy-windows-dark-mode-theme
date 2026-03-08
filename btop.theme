@@ -22,10 +22,10 @@ theme[main_bg]="#181818"
 theme[main_fg]="#ffffff"
 
 # Title color for boxes
-theme[title]="#c586c0"
+theme[title]="#0078d4"
 
 # Highlight color for keyboard shortcuts
-theme[hi_fg]="#4daafc"
+theme[hi_fg]="#c586c0"
 
 # Background color of selected item in processes box
 theme[selected_bg]="#616161"
@@ -37,54 +37,54 @@ theme[selected_fg]="#ffffff"
 theme[inactive_fg]="#616161"
 
 # Misc colors for processes box including mini cpu graphs, details memory graph and details status text
-theme[proc_misc]="#c586c0"
+theme[proc_misc]="#0078d4"
 
 # Box outline and divider line color
-theme[cpu_box]="#2ea043"
-theme[mem_box]="#2ea043"
-theme[net_box]="#2ea043"
+theme[cpu_box]="#0078d4"
+theme[mem_box]="#4daafc"
+theme[net_box]="#c586c0"
 theme[proc_box]="#2ea043"
 theme[div_line]="#616161"
 
 # Gradient for all meters and graphs
 theme[temp_start]="#4daafc"
 theme[temp_mid]="#0078d4"
-theme[temp_end]="#2ea043"
+theme[temp_end]="#bb8009"
 
 
-theme[cpu_start]="#4daafc"
+theme[cpu_start]="#2ea043"
 theme[cpu_mid]="#0078d4"
-theme[cpu_end]="#2ea043"
+theme[cpu_end]="#bb8009"
 
 
-theme[free_start]="#0078d4"
-theme[free_mid]="#bb8009"
-theme[free_end]="#bb8009"
+theme[free_start]="#bb8009"
+theme[free_mid]="#0078d4"
+theme[free_end]="#2ea043"
 
 
-theme[cached_start]="#bb8009"
-theme[cached_mid]="#bb8009"
-theme[cached_end]="#bb8009"
+theme[cached_start]="#0078d4"
+theme[cached_mid]="#4daafc"
+theme[cached_end]="#4daafc"
 
 
-theme[available_start]="#4daafc"
-theme[available_mid]="#4daafc"
-theme[available_end]="#4daafc"
+theme[available_start]="#bb8009"
+theme[available_mid]="#0078d4"
+theme[available_end]="#2ea043"
 
 
 theme[used_start]="#2ea043"
-theme[used_mid]="#2ea043"
-theme[used_end]="#2ea043"
+theme[used_mid]="#0078d4"
+theme[used_end]="#bb8009"
 
 
-theme[download_start]="#bb8009"
+theme[download_start]="#0078d4"
 theme[download_mid]="#4daafc"
-theme[download_end]="#0078d4"
+theme[download_end]="#2ea043"
 
 
-theme[upload_start]="#bb8009"
-theme[upload_mid]="#4daafc"
-theme[upload_end]="#0078d4"
+theme[upload_start]="#c586c0"
+theme[upload_mid]="#0078d4"
+theme[upload_end]="#4daafc"
 
 #  ______   __       ______                                       
 # /_____/\ /_/\     /_____/\                                      
