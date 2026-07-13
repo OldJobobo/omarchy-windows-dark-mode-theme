@@ -64,4 +64,30 @@ color15 = "#ffffff"
 #   \:.\::\ \  \:\ \ \ \\::  _  \ \\:\ \ \ \\::  _  \ \\:\ \ \ \  
 #    \: \  \ \  \:\_\ \ \\::(_)  \ \\:\_\ \ \\::(_)  \ \\:\_\ \ \ 
 #     \_____\/   \_____\/ \_______\/ \_____\/ \_______\/ \_____\/ 
-#                                                                 
+#
+# Omarchy 4 semantic palette roles. Keep these aligned with color0-color15.
+mode = "dark"
+bg = "#181818"
+lighter_bg = "#181818"
+selection = "#0078d4"
+muted = "#616161"
+dark_fg = "#616161"
+fg = "#ffffff"
+light_fg = "#ffffff"
+bright_fg = "#ffffff"
+red = "#f85149"
+green = "#2ea043"
+yellow = "#bb8009"
+blue = "#0078d4"
+magenta = "#c586c0"
+cyan = "#4daafc"
+orange = "#bb8009"
+brown = "#5e4005"
+dark_bg = "#121212"
+darker_bg = "#0c0c0c"
+bright_red = "#f85149"
+bright_green = "#2ea043"
+bright_yellow = "#bb8009"
+bright_blue = "#0078d4"
+bright_magenta = "#c586c0"
+bright_cyan = "#4daafc"
